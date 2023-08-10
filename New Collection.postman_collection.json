@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "ac868135-9288-4ba0-bdfe-1ddb6b296b25",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26853249"
+	},
+	"item": [
+		{
+			"name": "check seat",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/check_seat?train_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"check_seat"
+					],
+					"query": [
+						{
+							"key": "train_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "available_seat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"train_id\":1,\r\n    \"members\":2   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/available_seat",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"available_seat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update_seats",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"train_id\":1,\r\n        \"comp_id\":2,\r\n        \"seat_no\":\"S1\",\r\n        \"user_name\":\"Sanket Sawardekar\",\r\n        \"user_pancard\": \"CBNKS1397Y\",\r\n        \"user_mobile\":\"123456789\"\r\n    },\r\n    {\r\n        \"train_id\":1,\r\n        \"comp_id\":2,\r\n        \"seat_no\":\"S2\",\r\n        \"user_name\":\"Sanvi Sawardekar\",\r\n        \"user_pancard\": \"CLNKS1394Y\",\r\n        \"user_mobile\":\"983456789\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/update_seats",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"update_seats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book_seats",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"seat_list\":[1,3],\r\n    \"payment_status\":\"paid\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/app/book_seats",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"app",
+						"book_seats"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
